@@ -1,4 +1,4 @@
-package hei.school.sarisary.unit.objectMapper;
+package hei.school.soratra.unit.objectMapper;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Instant;

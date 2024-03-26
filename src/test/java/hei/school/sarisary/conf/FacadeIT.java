@@ -1,8 +1,8 @@
-package hei.school.sarisary.conf;
+package hei.school.soratra.conf;
 
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
-import hei.school.sarisary.PojaGenerated;
+import hei.school.soratra.PojaGenerated;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,7 +24,7 @@ public class FacadeIT {
     new EmailConf().configureProperties(registry);
 
     try {
-      var envConfClazz = Class.forName("hei.school.sarisary.conf.EnvConf");
+      var envConfClazz = Class.forName("hei.school.soratra.conf.EnvConf");
       var envConfConfigureProperties =
           envConfClazz.getDeclaredMethod("configureProperties", DynamicPropertyRegistry.class);
       var envConf = envConfClazz.getConstructor().newInstance();

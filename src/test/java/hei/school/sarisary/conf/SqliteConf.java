@@ -1,6 +1,6 @@
-package hei.school.sarisary.conf;
+package hei.school.soratra.conf;
 
-import hei.school.sarisary.PojaGenerated;
+import hei.school.soratra.PojaGenerated;
 import org.springframework.test.context.DynamicPropertyRegistry;
 
 @PojaGenerated

@@ -1,12 +1,12 @@
-package hei.school.sarisary.endpoint.rest.controller;
+package hei.school.soratra.endpoint.rest.controller;
 
-import static hei.school.sarisary.endpoint.rest.controller.health.PingController.OK;
+import static hei.school.soratra.endpoint.rest.controller.health.PingController.OK;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import hei.school.sarisary.PojaGenerated;
-import hei.school.sarisary.conf.FacadeIT;
-import hei.school.sarisary.endpoint.rest.controller.health.HealthDbController;
-import hei.school.sarisary.endpoint.rest.controller.health.PingController;
+import hei.school.soratra.PojaGenerated;
+import hei.school.soratra.conf.FacadeIT;
+import hei.school.soratra.endpoint.rest.controller.health.HealthDbController;
+import hei.school.soratra.endpoint.rest.controller.health.PingController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

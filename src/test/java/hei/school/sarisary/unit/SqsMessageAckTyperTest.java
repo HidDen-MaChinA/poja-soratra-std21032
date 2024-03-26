@@ -1,4 +1,4 @@
-package hei.school.sarisary.unit;
+package hei.school.soratra.unit;
 
 import static java.util.UUID.randomUUID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,10 +10,10 @@ import static org.mockito.Mockito.verify;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import hei.school.sarisary.PojaGenerated;
-import hei.school.sarisary.conf.FacadeIT;
-import hei.school.sarisary.endpoint.event.EventConsumer;
-import hei.school.sarisary.endpoint.event.gen.UuidCreated;
+import hei.school.soratra.PojaGenerated;
+import hei.school.soratra.conf.FacadeIT;
+import hei.school.soratra.endpoint.event.EventConsumer;
+import hei.school.soratra.endpoint.event.gen.UuidCreated;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +51,7 @@ public class SqsMessageAckTyperTest extends FacadeIT {
     var uuidCreated = UuidCreated.builder().uuid(uuid).build();
     var payload = om.readValue(om.writeValueAsString(uuidCreated), UuidCreated.class);
     var typedEvent =
-        new EventConsumer.TypedEvent("hei.school.sarisary.endpoint.event.gen.UuidCreated", payload);
+        new EventConsumer.TypedEvent("hei.school.soratra.endpoint.event.gen.UuidCreated", payload);
 
     var actualAcknowledgeableEvents = subject.apply(List.of(sqsMessageFrom(typedEvent)));
     var actualAcknowledgeableEvent = actualAcknowledgeableEvents.get(0);
@@ -68,7 +68,7 @@ public class SqsMessageAckTyperTest extends FacadeIT {
     var payload = om.readValue(om.writeValueAsString(uuidCreated), UuidCreated.class);
     var unknownTypenameTypedEvent = new EventConsumer.TypedEvent(UNKNOWN_TYPENAME, payload);
     var validTypedEvent =
-        new EventConsumer.TypedEvent("hei.school.sarisary.endpoint.event.gen.UuidCreated", payload);
+        new EventConsumer.TypedEvent("hei.school.soratra.endpoint.event.gen.UuidCreated", payload);
 
     var actualAcknowledgeableEvents =
         subject.apply(

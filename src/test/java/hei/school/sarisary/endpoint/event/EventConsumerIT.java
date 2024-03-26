@@ -1,14 +1,14 @@
-package hei.school.sarisary.endpoint.event;
+package hei.school.soratra.endpoint.event;
 
 import static java.util.UUID.randomUUID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import hei.school.sarisary.PojaGenerated;
-import hei.school.sarisary.conf.FacadeIT;
-import hei.school.sarisary.endpoint.event.gen.UuidCreated;
-import hei.school.sarisary.repository.DummyUuidRepository;
+import hei.school.soratra.PojaGenerated;
+import hei.school.soratra.conf.FacadeIT;
+import hei.school.soratra.endpoint.event.gen.UuidCreated;
+import hei.school.soratra.repository.DummyUuidRepository;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ class EventConsumerIT extends FacadeIT {
         List.of(
             new EventConsumer.AcknowledgeableTypedEvent(
                 new EventConsumer.TypedEvent(
-                    "hei.school.sarisary.endpoint.event.gen.UuidCreated", payloadReceived),
+                    "hei.school.soratra.endpoint.event.gen.UuidCreated", payloadReceived),
                 () -> {})));
 
     Thread.sleep(2_000);
